@@ -1,5 +1,5 @@
 ﻿import styles from './Books.module.scss'
-import { IBook } from '../types'
+import { IBook } from '../../types'
 import Image from 'next/image'
 import React from 'react'
 import NoImage from '../../../assets/images/no-image.png'
