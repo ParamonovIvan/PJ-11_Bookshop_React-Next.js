@@ -1,2 +1,2 @@
-# PJ-11_Bookshop_-React-Next.js-
+# PJ-11_Bookshop_React-Next.js
 Project "Development of the Bookshop (React+Next.js)" for SkillFactory
