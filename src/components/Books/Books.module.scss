@@ -1,0 +1,150 @@
+﻿@import '../../styles/variables.scss';
+
+.book__section {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.book__list {
+  grid-area: books;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 70px;
+  column-gap: 75px;
+  z-index: 1;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  z-index: 10;
+  margin-top: 36px;
+  justify-content: flex-end;
+}
+
+.book__poster {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 24px 36px rgba(53, 49, 84, 0.28);
+}
+
+.book__details {
+  height: 100%;
+  width: 175px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+.book__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: $text-black;
+}
+
+.book__author, .book__description {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: $text-gray;
+  text-transform: capitalize;
+  color: $text-gray;
+}
+
+.book__price {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $text-black;
+}
+
+.book__rating {
+  display: flex;
+  gap: 10px;
+
+  &__stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+
+    &::before {
+      content: "★★★★★";
+      letter-spacing: 3px;
+      background: linear-gradient(
+        90deg,
+        $star-color var(--percent),
+        $star-background var(--percent)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__reviews {
+    font-family: "Open Sans", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 14px;
+    color: $text-gray;
+    text-transform: none;
+  }
+}
+
+.btn {
+  background: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid $primary;
+  padding: 18px;
+  color: $primary;
+  font-family: Montserrat, sans-serif;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  border: 1px solid $disabled;
+  color: $disabled-text;
+}
+
+
+@media (min-width: 1120px) {
+  .book__section {
+      width: 1120px;
+  }
+}
+
+@media (min-width: 576px) {
+  .book {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 576px) {
+  .book__rating {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1120px) {
+  .book__list {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,70 @@
+﻿@import '../Books/Books.module.scss';
+@import '../../styles/variables.scss';
+@import '../../pages/cart/Cart.module.scss';
+
+.cart__item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  word-wrap: break-word;
+}
+
+.price {
+  display: none;
+  color: var(--text-black, #1c2a39);
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+
+  &__small {
+    @extend .price;
+    display: block;
+    font-size: 12px;
+  }
+}
+
+.delivery {
+  display: none;
+  color: #5c6a79;
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  &__small {
+    @extend .delivery;
+    display: block;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  .price {
+    display: block;
+  }
+  .delivery {
+    display: block;
+  }
+  .price {
+    &__small {
+      display: none;
+    }
+  }
+
+  .delivery {
+    &__small {
+      display: none;
+    }
+  }
+}
+
+.quantity {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}

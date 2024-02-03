@@ -1,0 +1,147 @@
+﻿@import '../../styles/variables.scss';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1120px;
+  margin: 0 auto;
+  min-height: 116px;
+  padding: 0 15px;
+  align-items: center;
+  position: sticky;
+  z-index: 2;
+
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    > button {
+      display: none;
+      width: 24px;
+      height: 24px;
+      padding: 2px;
+      background-color: #fff;
+
+      > svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .navbar__logo__a {
+      color: $text-black;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+
+  .nav {
+    > ul {
+      display: flex;
+      gap: 40px;
+
+      > li {
+        text-transform: uppercase;
+        transition: all 0.4s ease-in-out;
+    
+        &:is(:hover, .active) {
+          color: $text-black;
+          font-weight: 900;
+        }
+
+        &.active {
+          pointer-events: none;
+        }
+      }
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+}
+  .navbar__profile {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .profile__btn {
+    all: unset;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    content: " ";
+    vertical-align: text-bottom;
+
+    &__user {
+      @extend .profile__btn;
+      background-image: url('../../../assets/images/icons/user.svg');
+    }
+
+    &__search {
+      @extend .profile__btn;
+      background-image: url('../../../assets/images/icons/search.svg');
+    }
+
+    &__basket {
+      @extend .profile__btn;
+      position: relative;
+      background-image: url('../../../assets/images/icons/shop-bag.svg');
+
+      .basket__items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: -6px;
+        right: 0;
+        height: 13px;
+        width: 13px;
+        border-radius: 6px;
+        background-color: #ff353a;
+        color: $background;
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 12px;
+      }
+    }
+  }
+
+@media (max-width: 860px) {
+  .navbar {
+    .navbar__logo {
+      > button {
+        display: inline-block;
+      }
+    }
+
+    .nav {
+      display: none;
+      background-color: $background;
+      position: absolute;
+      top: calc(100% + 10px);
+
+      > ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+
+        > li {
+        font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+  padding: 30px 0;
+  }
+}
