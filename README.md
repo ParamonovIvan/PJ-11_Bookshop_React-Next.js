@@ -125,6 +125,10 @@
 + Стараться использовать современный ES6 синтаксис: стрелочные функции, декомпозицию, Spred и т.д.
 
 + При написании кода стараться следовать принципам KISS (Keep It Short and Simple - не усложняй) и DRY (Don’t Repeat Yourself - не повторяйся).
+
++ Проект должен использовать TypeScrit.
+
++ Проект должен использовать встроенные методы Next.js для получения данных (getStaticProps или getSeverSideProps).
   
 + Задеплоить готовое приложение на сайте vercel.com.
 
@@ -135,12 +139,14 @@
 ```
 npm i
 npm run dev
+npm run build
 ```
 + yarn
 
 ```
 yarn add
 yarn dev
+yarn build
 ```
 
 ### Результат работы:
