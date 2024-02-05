@@ -55,6 +55,10 @@
         &.active {
           pointer-events: none;
         }
+        
+        a {
+          color: $text-black;
+        }
       }
     }
 
