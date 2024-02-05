@@ -153,7 +153,7 @@ yarn build
 
 #### Ссылка на страницу книжного интернет-магазина:
 
-• https://pj-11-bookshop-react-next-js-ncl8.vercel.app
+• https://pj-11-bookshop-react-next-js.vercel.app/
 
 #### Внешний вид страницы книжного интернет-магазина
 
